@@ -32,6 +32,7 @@ class AddBookForm(FlaskForm):
     bookImg = FileField('წიგნის სურათი: ', validators=[FileSize(max_size=10 * 1024 * 1024), FileAllowed(["jpg", "png", "jpeg"], message='შეარჩიეთ სწორი ტიპის ფაილი')])
     submit = SubmitField('დამატება')
 
+
 class EditLibraryForm(FlaskForm):
     libraryName = StringField("ბიბლიოთეკის სახელი", validators=[DataRequired(message='შეავსეთ ყველა ველი')])
     libraryDescription = TextAreaField('აგვიღწერეთ: ', validators=[DataRequired(message='შეავსეთ ყველა ველი')])
