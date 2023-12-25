@@ -1,8 +1,7 @@
 from flask_wtf import FlaskForm
-from flask_wtf.file import FileRequired, FileField, FileAllowed, FileSize
+from flask_wtf.file import FileField, FileAllowed, FileSize
 from wtforms.fields import StringField, TextAreaField, IntegerField, SubmitField, PasswordField
 from wtforms.validators import DataRequired, Email, EqualTo
-from email_validator import validate_email
 class AddLibraryForm(FlaskForm):
     libraryName = StringField("ბიბლიოთეკის სახელი", validators=[DataRequired(message='შეავსეთ ყველა ველი')], render_kw={"autocomplete": "off"})
     libraryDescription = TextAreaField('აგვიღწერეთ: ', validators=[DataRequired(message='შეავსეთ ყველა ველი')])
@@ -12,7 +11,7 @@ class AddLibraryForm(FlaskForm):
     libraryPrice = IntegerField('ფასი: ', validators=[DataRequired(message='შეავსეთ ყველა ველი')])
     libraryAdminUsername = StringField('ადმინის იუზერნეიმი: ', validators=[DataRequired(message="ბიბლიოთეკას უნდა ჰყავდეს ადმინი")])
     libraryAdminPass = PasswordField('ადმინის პაროლი', validators=[DataRequired()], render_kw={"autocomplete": "off"})
-    libraryAdminEmail = StringField('ადმინის მეილი', validators=[DataRequired()])
+    libraryAdminEmail = StringField('ადმინის მეილი', validators=[DataRequired(), Email()])
     submit = SubmitField('დამატება')
 
 class EditLibraryForm(FlaskForm):
