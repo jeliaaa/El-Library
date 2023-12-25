@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="searchBooks w-100">
+        {% for res in result %}
+            <p>{{res.libName}}</p>
+        {% endfor %}
+    </div>
+{%endblock%}

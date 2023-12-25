@@ -1,0 +1,148 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+.content{
+    min-height:90dvh;
+}
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main_hero{
+    width: 100dvw;
+    height: 85dvh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.hero_btn{
+    padding: 20px 100px !important;
+    width:300px;
+    color: white !important;
+}
+.login-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+.carousel-item {
+    height: 70vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.product-card {
+    margin-bottom: 20px;
+    height:500px
+}
+
+.product-image {
+    max-height: 200px;
+    object-fit: cover;
+}
+.pricing-container {
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+.add{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+}
+.search_blocks{
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+.search_blocks a{
+    width:40%;
+    aspect-ratio:1/0.7;
+    background-color: gainsboro;
+    border-radius:20px;
+    text-decoration:none;
+}
+.searchblock{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:50px;
+    gap:40px;
+}
+.searchblock i{
+    width: 60%;
+    text-align:center;
+    font-size:300px
+}
+.searchResultsLib{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+    padding:30px
+}
+.searchResultsBook{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+    padding:30px
+}

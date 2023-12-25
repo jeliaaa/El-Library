@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="add p-5">
+      <h1>Add Your Own Service</h1>
+      {% if form.errors %}
+            {% for field, errors in form.errors.items() %}
+                  {% for error in errors %}
+                        <div class="alert alert-danger">
+                              {{ error }}
+                        </div>
+                  {% endfor %}
+            {% endfor %}
+      {% endif %}
+      <form method="POST" enctype="multipart/form-data">
+            {{form.hidden_tag()}}
+            {{ form.bookName(class = "form-control my-4", placeholder = form.bookName.label.text) }}
+            {{ form.bookDescription(class = "form-control my-4", placeholder = form.bookDescription.label.text) }}
+            {{ form.bookImg(class = "form-control my-4", placeholder = form.bookImg.label.text, accept='.jpg, .png, .jpeg' ) }}
+            {{ form.bookAuthor(class = "form-control my-4", placeholder = form.bookAuthor.label.text) }}
+            {{ form.submit(class = "btn btn-danger") }}
+      </form>
+</div>
+{% endblock %}

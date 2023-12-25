@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+   <div class="search_div w-100">
+        <h1>ძებნა</h1>
+        <hr />
+        <div class="search_blocks">
+        <a href="/login/library_admin">
+            <div class="searchblock">
+                <h2>ბიბლიოთეკის ადმინისტრატორი</h2>
+                <i class="fa-regular fa-bookmark"></i>
+            </div>
+        </a>
+        <a href="/login/user">
+            <div class="searchblock">
+                <h2>მომხმარებელი</h2>
+               <i class="fa-regular fa-user"></i>
+            </div>
+        </a>
+    </div>
+    </div>
+
+{% endblock %}
