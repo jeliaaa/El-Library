@@ -181,7 +181,7 @@ def searchBooks():
 def searchb():
     query = request.form.get('query', '')
     results = Book.query.filter(Book.bookName.ilike(f'%{query}%')).all()
-    books = [{'id': book.BookID, 'name': book.bookName, 'img': book.bookImg, 'description': book.bookDescription, 'author' : book.bookAuthor} for book in results]
+    books = [{'id': book.BookID, 'name': book.bookName, 'img': book.bookImg, 'description': book.bookDescription, 'author' : book.bookAuthor, 'libId' : book.library_id, 'libName' : Library.query.get(book.library_id).libName} for book in results]
     return jsonify({'books': books})
 @app.route('/searchl', methods=['POST', 'GET'])
 def searchl():

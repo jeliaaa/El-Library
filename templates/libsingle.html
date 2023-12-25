@@ -42,6 +42,7 @@
                         <h5 class="card-title">{{book.bookName}}</h5>
                         <p class="card-text">{{ book.bookDescription }}</p>
                       </div>
+                        <button class="btn btn-secondary" onclick="alert('შეამოწმეთ მეილი')">დაჯავშნა</button>
                         {% if current_user.role == 'libAdmin' and admin %}
                         <div class="card-body">
                             <a href="/delete_book/{{ book.library_id }}/{{ book.BookID }}" class="card-link">წაშლა</a>
