@@ -14,7 +14,7 @@
             <div style="width: 80%; display: flex; flex-direction: column; justify-content: space-between;">
                 <p style="font-size: larger; font-weight: bolder; color: yellowgreen;">ბიბლიოთეკა:</p>
                 <h3>{{library.libName}}</h3>
-                <p style="font-size: larger; font-weight: bolder; color: yellowgreen;">:საიდენტიფიკაციო კოდი:</p>
+                <p style="font-size: larger; font-weight: bolder; color: yellowgreen;">საიდენტიფიკაციო კოდი:</p>
                 <h3>{{library.LibID }}</h3>
                 <p style="font-size: larger; font-weight: bolder; color: yellowgreen;">მისამართი: </p>
                 <h3>{{library.libAddress}}</h3>
@@ -36,13 +36,15 @@
             {% endif %}
             <div style="width:80%; display:flex; flex-wrap:wrap; justify-content:space-between">
                 {%for book in library.libBooks%}
-                    <div class="card" style="width: 18rem;">
-                      <img src="{{url_for('static', filename=book.bookImg)}}" class="card-img-top" alt="...">
+                    <div class="card" style="width: 23rem; padding-bottom:20px">
+                      <img src="{{url_for('static', filename=book.bookImg)}}" class="card-img-top" alt="..." style="height:70%">
                       <div class="card-body">
                         <h5 class="card-title">{{book.bookName}}</h5>
                         <p class="card-text">{{ book.bookDescription }}</p>
                       </div>
-                        <button class="btn btn-secondary" onclick="alert('შეამოწმეთ მეილი')">დაჯავშნა</button>
+                        {% if current_user.is_authenticated %}
+                            <button class="btn btn-secondary" style="width:60%; margin:auto" onclick="alert('შეამოწმეთ მეილი')">დაჯავშნა</button>
+                        {% endif %}
                         {% if current_user.role == 'libAdmin' and admin %}
                         <div class="card-body">
                             <a href="/delete_book/{{ book.library_id }}/{{ book.BookID }}" class="card-link">წაშლა</a>

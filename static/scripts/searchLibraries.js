@@ -14,15 +14,17 @@
             const libraries = data.libraries;
             searchResultsLib.innerHTML = libraries.map(library => {
                 return (
-                    `<div class="col-lg-3 col-md-4 col-sm-6 product-card">
-                <div class="card">
+                    `<div class="col-lg-3 col-md-4 col-sm-6 product-card" style='height:700px'>
+                <div class="card" style='height:100%'>
                     <img class="card-img-top product-image"
                         src="/static/${library.img}" alt="Product Image">
                     <div class="card-body">
+                        <div style='height:90%'>
                         <h5 class="card-title">${library.name}</h5>
                         <p class="card-text">${library.description}</p>
+                        </div>
                         <a class="btn btn-primary" href="/library/${ library.id }">ნახვა</a>
-                        <a class="btn btn-primary" >ადმინი: ${library.admin} </a>
+                        <a class="btn btn-primary" style='cursor:none' >ადმინი: ${library.admin} </a>
                     </div>
                 </div>
             </div>`

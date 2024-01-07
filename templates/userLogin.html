@@ -3,7 +3,7 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<form method="POST">
+<form method="POST" style="display:flex; flex-direction:column; padding:50px;">
         {{ form.hidden_tag() }}
         <div>
             {{ form.username.label }}
@@ -19,7 +19,7 @@
                 <p style="color: red;">{{ error }}</p>
             {% endfor %}
         </div>
-        <div>
+        <div class="mt-5 subb">
             {{ form.submit }}
         </div>
     </form>

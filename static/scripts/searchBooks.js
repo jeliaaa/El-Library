@@ -14,8 +14,8 @@
             const books = data.books;
             searchResults.innerHTML = books.map(book => {
                 return (
-                    `<div class="card" style="width: 18rem;">
-                        <img src="/static/${book.img}" class="card-img-top" style='height:60%' alt="...">
+                    `<div class="card" style="width: 23rem;">
+                        <img src="/static/${book.img}" class="card-img-top" style='height:50%' alt="...">
                         <div class='card-body' style='height:40%'>
                         <div class="card-body">
                             <h5 class="card-title">${book.name}</h5>
@@ -23,7 +23,7 @@
                         </div>
                         <div class="card-body">
                             <p class="card-link">${book.author}</p>
-                            <a class='nav-link' href='/library/${book.libId}'>${book.libName}</a>
+                            <a class='nav-link mt-5' href='/library/${book.libId}'>${book.libName}</a>
                         </div>
                         </div>
                     </div>`

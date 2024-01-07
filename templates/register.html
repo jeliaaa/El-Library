@@ -4,8 +4,7 @@
 
 {% block content %}
    <div class="pricing-container">
-
-        <h1>User Registration</h1>
+        <h1>რეგისტრაცია</h1>
     <form method="POST" action="{{ url_for('register') }}">
         {{ form.hidden_tag() }}
         <div>
@@ -36,7 +35,7 @@
                 <p style="color: red;">{{ error }}</p>
             {% endfor %}
         </div>
-        <div>
+        <div class="mt-5 subb">
             {{ form.submit }}
         </div>
         {% with messages = get_flashed_messages() %}
@@ -49,6 +48,5 @@
   {% endif %}
 {% endwith %}
     </form>
-
     </div>
 {% endblock %}
