@@ -18,5 +18,11 @@
 
       <button onclick="alert('მადლობა!')" type="submit">განთავსება</button>
     </form>
+
+    <div>
+        {%for user in users : %}
+        <p>{{ user.username }}</p>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

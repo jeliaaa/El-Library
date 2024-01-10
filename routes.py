@@ -198,4 +198,7 @@ def about():
     return render_template('aboutUs.html')
 @app.route('/contact')
 def contact():
-    return render_template('contact.html')
+    for user in User.query.all():
+        print(user.username)
+    return render_template('contact.html', users=User.query.all())
+
