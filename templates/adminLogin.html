@@ -22,5 +22,11 @@
         <div class="mt-5 subb">
             {{ form.submit }}
         </div>
+    {%if userErr == True%}
+        <div style="width:80%; margin:auto" class="mt-5 alert alert-danger text-center">ასეთი მომხმარებელი არ არსებობს</div>
+    {%endif%}
+    {%if checkPass == True%}
+        <div style="width:80%; margin:auto" class="mt-5 alert alert-danger text-center">პაროლი არასწორია</div>
+    {%endif%}
     </form>
 {% endblock %}

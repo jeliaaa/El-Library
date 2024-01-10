@@ -124,30 +124,38 @@ def login():
 @app.route('/login/user', methods=["GET", "POST"])
 def userLogin():
     form = LoginForm()
+    userErr = False
+    checkPass = False
     if form.validate_on_submit():
         # Use first() to get the user instance
         user = User.query.filter(User.username == form.username.data).first()
-        print("Username:", form.username.data)
-        print("Password:", form.password.data)
-        print("User:", user.username, user.password, user.check_pass(form.password.data))
         if user and user.check_pass(form.password.data):
             login_user(user)
             return redirect('/')
-        else:
+        elif not user:
             # Use return to actually redirect
-            return redirect('/ara')
+            userErr = True
+        else:
+            checkPass = True
 
-    return render_template("userLogin.html", form=form)
+    return render_template("userLogin.html", form=form, userErr = userErr, checkPass = checkPass)
 
 @app.route('/login/library_admin', methods=["GET", "POST"])
 def adminLogin():
     form = LoginForm()
+    userErr = False
+    checkPass = False
     if (form.validate_on_submit()):
         user = User.query.filter(User.username == form.username.data).first()
         if(user and user.check_pass(form.password.data)):
             login_user(user)
-        return redirect('/')
-    return render_template("adminLogin.html", form=form)
+            return redirect('/')
+        elif not user:
+            userErr = True
+        else:
+            checkPass = True
+
+    return render_template("adminLogin.html", form=form, userErr = userErr, checkPass = checkPass)
 @app.route('/log_out')
 def logOut():
     logout_user()

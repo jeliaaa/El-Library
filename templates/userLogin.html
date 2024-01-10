@@ -3,7 +3,7 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<form method="POST" style="display:flex; flex-direction:column; padding:50px;">
+    <form method="POST" style="display:flex; flex-direction:column; padding:50px;">
         {{ form.hidden_tag() }}
         <div>
             {{ form.username.label }}
@@ -23,4 +23,10 @@
             {{ form.submit }}
         </div>
     </form>
+    {%if userErr == True%}
+        <div style="width:80%; margin:auto" class="mt-5 alert alert-danger text-center">ასეთი მომხმარებელი არ არსებობს</div>
+    {%endif%}
+    {%if checkPass == True%}
+        <div style="width:80%; margin:auto" class="mt-5 alert alert-danger text-center">პაროლი არასწორია</div>
+    {%endif%}
 {% endblock %}
