@@ -14,7 +14,7 @@
             const books = data.books;
             searchResults.innerHTML = books.map(book => {
                 return (
-                    `<div class="card" style="width: 23rem;">
+                    `<div class="card" style="width: 400px;">
                         <img src="/static/${book.img}" class="card-img-top" style='height:50%' alt="...">
                         <div class='card-body' style='height:40%'>
                         <div class="card-body">
@@ -52,7 +52,7 @@
                 // Update the results
                 searchResults.innerHTML = books.map(book => {
                     return (
-                        `<div class="card" style="width: 18rem;">
+                        `<div class="card" style="width: 400px ;">
                             <img src="/static/${book.img}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">${book.name}</h5>

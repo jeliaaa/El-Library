@@ -14,7 +14,7 @@
             const libraries = data.libraries;
             searchResultsLib.innerHTML = libraries.map(library => {
                 return (
-                    `<div class="col-lg-3 col-md-4 col-sm-6 product-card" style='height:700px'>
+                    `<div class="col-lg-3 col-md-4 col-sm-6 product-card" style='width:400px; height:fit-content'>
                 <div class="card" style='height:100%'>
                     <img class="card-img-top product-image"
                         src="/static/${library.img}" alt="Product Image">
@@ -23,8 +23,7 @@
                         <h5 class="card-title">${library.name}</h5>
                         <p class="card-text">${library.description}</p>
                         </div>
-                        <a class="btn btn-primary" href="/library/${ library.id }">ნახვა</a>
-                        <a class="btn btn-primary" style='cursor:none' >ადმინი: ${library.admin} </a>
+                        <a class="btn btn-primary mt-3" href="/library/${ library.id }">ნახვა</a>
                     </div>
                 </div>
             </div>`
@@ -51,7 +50,7 @@
                 // Update the results
                 searchResultsLib.innerHTML = libraries.map(library => {
                     return (
-                        `<div class="col-lg-3 col-md-4 col-sm-6 product-card">
+                        `<div class="col-lg-3 col-md-4 col-sm-6 product-card" style="width:400px; height:fit-content">
                 <div class="card">
                     <img class="card-img-top product-image"
                         src="/static/${library.img}" alt="Product Image">
@@ -59,7 +58,6 @@
                         <h5 class="card-title">${library.name}</h5>
                         <p class="card-text">${library.description}</p>
                         <a class="btn btn-primary" href="library/{{ library.LibID }}">ნახვა</a>
-                        <a class="btn btn-primary" href="delete_library/{{ library.LibID }}">წაშლა</a>
                     </div>
                 </div>
             </div>`

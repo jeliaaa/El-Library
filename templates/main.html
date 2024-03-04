@@ -13,8 +13,8 @@
         <h2 class="m-4 p-3" style="border-left: 10px solid yellow;">ბიბლიოთეკები</h2>
         <div class="row" id="section2" style="display:flex; justify-content: space-evenly; flex-wrap: wrap;">
             {% for library in libraries %}
-            <div class="col-lg-3 col-md-4 col-sm-6 product-card" style="min-height: 700px;">
-                <div class="card" style="height:100%">
+            <div class="col-lg-3 col-md-4 col-sm-6 product-card" style="height:fit-content; width:300px">
+                <div class="card" style="height:fit-content">
                     <img class="card-img-top product-image"
                         src='{{url_for("static", filename=library.libImg)}}' alt="Product Image">
                     <div class="card-body">
