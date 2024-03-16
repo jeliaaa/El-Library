@@ -8,6 +8,7 @@
         <div class="main_hero" style="background-image: url({{ url_for('static', filename='library.webp')}})">
             <button class="btn btn-warning hero_btn" onclick="scrollToSection('section2')">View ></button>
         </div>
+
         <div class="container" style="display:'flex'; flex-direction:column;">
   <div class="row mt-5">
     <div class="col">
@@ -73,6 +74,7 @@
             </div>
             {% endfor %}
         </div>
+        {% include 'response.html' %}
 
         <script>
             function scrollToSection(sectionId) {
