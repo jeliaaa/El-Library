@@ -4,6 +4,10 @@ from os import path
 from ext import db, app
 from models import Library, Book, User
 from flask_login import login_user, logout_user, login_required, current_user
+import openai
+
+openai.api_key = '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'
+
 @app.route('/')
 def index():
     librariess = Library.query.all()
@@ -210,3 +214,46 @@ def contact():
         print(user.username)
     return render_template('contact.html', users=User.query.all())
 
+
+# def get_completion(prompt):
+#     print(prompt)
+#     query = openai.Completion.create(
+#         engine="gpt-3.5-turbo-instruct",
+#         prompt=prompt,
+#         max_tokens=1024,
+#         n=1,
+#         stop=None,
+#         temperature=0.5,
+#     )
+#
+#     response = query.choices[0].text
+#     return response
+#
+#
+# @app.route("/response", methods=['POST', 'GET'])
+# def query_view():
+#     if request.method == 'POST':
+#         print('step1')
+#         prompt = request.form['prompt']
+#         response = get_completion(prompt)
+#         print(response)
+#
+#         return jsonify({'response': response})
+#     return render_template('response.html')
+def recommend_book():
+    # This is just a placeholder recommendation
+    book_recommendation = "I recommend you to read 'To Kill a Mockingbird' by Harper Lee"
+    return book_recommendation
+
+@app.route("/response", methods=['POST'])
+def chatbot():
+    user_input = request.form.get('user_input')
+    if user_input.lower() == 'recommend a book':
+        book_recommendation = recommend_book()
+        return jsonify({'response': book_recommendation})
+    else:
+        return jsonify({'response': "I'm just a mock-up chatbot. Ask me to recommend a book!"})
+
+@app.route("/bot")
+def chatbot_page():
+    return render_template('response.html')

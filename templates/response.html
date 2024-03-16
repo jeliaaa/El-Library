@@ -1,0 +1,37 @@
+
+{% block content %}
+<div class="w-100" style="width:100%; display:flex; justify-content:center">
+<div style="display:flex; flex-direction:column; width:60%; align-items:center" class="m-4">
+    <h1>Chatbot</h1>
+    <form id="chatbotForm" style="width:100%">
+        <label for="userInput">Enter your message:</label><br>
+        <input type="text" id="userInput" name="user_input"><br><br>
+        <button type="submit">Send</button>
+    </form>
+
+    <div id="response" class="mt-4" style="border:1px solid black;"></div>
+</div>
+    </div>
+    <script>
+        document.getElementById("chatbotForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var userInput = document.getElementById("userInput").value;
+            fetch("/response", {
+                method: "POST",
+                body: new URLSearchParams({
+                    user_input: userInput
+                }),
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("response").innerText = data.response;
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        });
+    </script>
+    {% endblock %}
