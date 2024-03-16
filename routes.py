@@ -4,9 +4,6 @@ from os import path
 from ext import db, app
 from models import Library, Book, User
 from flask_login import login_user, logout_user, login_required, current_user
-import openai
-
-openai.api_key = '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'
 
 @app.route('/')
 def index():
