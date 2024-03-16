@@ -24,9 +24,9 @@
         </div>
     </form>
     {%if userErr == True%}
-        <div style="width:80%; margin:auto" class="mt-5 alert alert-danger text-center">ასეთი მომხმარებელი არ არსებობს</div>
+        <div style="width:80%; margin:auto" class="mt-5 alert alert-danger text-center">No such user</div>
     {%endif%}
     {%if checkPass == True%}
-        <div style="width:80%; margin:auto" class="mt-5 alert alert-danger text-center">პაროლი არასწორია</div>
+        <div style="width:80%; margin:auto" class="mt-5 alert alert-danger text-center">Password is incorrect</div>
     {%endif%}
 {% endblock %}

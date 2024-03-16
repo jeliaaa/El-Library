@@ -23,7 +23,7 @@
                         <h5 class="card-title">${library.name}</h5>
                         <p class="card-text">${library.description}</p>
                         </div>
-                        <a class="btn btn-primary mt-3" href="/library/${ library.id }">ნახვა</a>
+                        <a class="btn btn-primary mt-3" href="/library/${ library.id }">View</a>
                     </div>
                 </div>
             </div>`

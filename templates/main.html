@@ -6,11 +6,51 @@
     <div class="main">
 
         <div class="main_hero" style="background-image: url({{ url_for('static', filename='library.webp')}})">
-            <button class="btn btn-warning hero_btn" onclick="scrollToSection('section2')">იხილეთ მეტი></button>
+            <button class="btn btn-warning hero_btn" onclick="scrollToSection('section2')">View ></button>
         </div>
+        <div class="container" style="display:'flex'; flex-direction:column;">
+  <div class="row mt-5">
+    <div class="col">
+      <h1 class="text-center">Your Recommendations</h1>
+    </div>
+  </div>
 
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71v8u6879cL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 1">
+        <div class="card-body">
+          <h5 class="card-title">Robinson Crusoe</h5>
+          <p class="card-text">Robinson Crusoe is an English adventure novel by Daniel Defoe, first published on 25 April 1719. Written with a combination of Epistolary, confessional,
+              and didactic forms, the book follows the title character (born Robinson Kreutznaer) after he is cast away
+              and spends 28 years on a remote tropical desert island near the coasts of Venezuela and Trinidad, encountering cannibals, captives, and mutineers before being rescued.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/710K9pWWZ+L._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 2">
+        <div class="card-body">
+          <h5 class="card-title">Treasure Island</h5>
+          <p class="card-text">Treasure Island (originally titled The Sea Cook: A Story for Boys) is an adventure novel by Scottish author Robert Louis Stevenson, telling a story of "buccaneers and buried gold". It is considered a coming-of-age story and is noted for its atmosphere, characters, and action.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://mpd-biblio-covers.imgix.net/9781466804128.jpg" class="card-img-top" alt="Book 3">
+        <div class="card-body">
+          <h5 class="card-title">Moby-Dick</h5>
+          <p class="card-text">Moby-Dick; or, The Whale is an 1851 novel by American writer Herman Melville. The book is the sailor Ishmael's narrative of the maniacal quest of Ahab, captain of the whaling ship Pequod, for vengeance against Moby Dick, the giant white sperm whale that bit off his leg on the ship's previous voyage.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
         <!-- Featured Products -->
-        <h2 class="m-4 p-3" style="border-left: 10px solid yellow;">ბიბლიოთეკები</h2>
+        <h2 class="m-4 p-3" style="border-left: 10px solid yellow;">Libraries</h2>
         <div class="row" id="section2" style="display:flex; justify-content: space-evenly; flex-wrap: wrap;">
             {% for library in libraries %}
             <div class="col-lg-3 col-md-4 col-sm-6 product-card" style="height:fit-content; width:300px">
@@ -23,9 +63,9 @@
                         <p class="card-text">{{library.libDescription}}</p>
                         </div>
                         <div style="margin-top:100px">
-                        <a class="btn btn-primary" href="library/{{ library.LibID }}">ნახვა</a>
+                        <a class="btn btn-primary" href="library/{{ library.LibID }}">View</a>
                         {% if current_user.role == 'mainAdmin' %}
-                        <a class="btn btn-primary" href="delete_library/{{ library.LibID }}">წაშლა</a>
+                        <a class="btn btn-primary" href="delete_library/{{ library.LibID }}">Delete</a>
                         {% endif %}
                             </div>
                     </div>

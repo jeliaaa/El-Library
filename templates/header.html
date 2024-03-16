@@ -6,32 +6,32 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="/">მთავარი</a>
-        <a class="nav-link" href="/searchPage">ძებნა</a>
-        <a class="nav-link" href="/about-us">ჩვენს შესახებ</a>
-        <a class="nav-link" href="/contact">დაგვიკავშირდით</a>
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
+        <a class="nav-link" href="/searchPage">Search</a>
+        <a class="nav-link" href="/about-us">About us</a>
+        <a class="nav-link" href="/contact">Contact us</a>
         {% if (current_user.role == "mainAdmin") %}
-          <a class="nav-link" href="/addLib">დაამატეთ ბიბლიოთეკა </a>
+          <a class="nav-link" href="/addLib">Add a Library</a>
         {% endif %}
       </div>
     </div>
     {% if current_user.is_authenticated %}
     <div class="btn-group">
     <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      პროფილი
+      Profile
     </button>
   <div class="dropdown-menu">
     <a class="dropdown-item" href="#">{{ current_user.username }}</a>
-    <a class="dropdown-item" href="#">დეტალები</a>
+    <a class="dropdown-item" href="#">Details</a>
     {% if current_user.role == 'libAdmin' %}
-    <a class="dropdown-item" href="/MyLibrary">ჩემი ბიბლიოთეკა</a>
+    <a class="dropdown-item" href="/MyLibrary">My Library</a>
     {% endif %}
-    <a class="dropdown-item" href="/log_out">გამოსვლა</a>
+    <a class="dropdown-item" href="/log_out">Log out</a>
   </div>
       {% else %}
       <div class="nav_methods">
-        <a class="btn btn-success" href="/login">შესვლა</a>
-        <a class="btn " href="/register">რეგისტრაცია</a>
+        <a class="btn btn-success" href="/login">Sign In</a>
+        <a class="btn " href="/register">Sign Up</a>
       </div>
 </div>
     {% endif %}
